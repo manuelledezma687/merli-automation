@@ -26,7 +26,7 @@ test.describe('Test Suite Google', () => {
 
     await test.step('Entonces el Usuario podrá ver el historial de la primera edición del Artículo', async () => {
       const firstEdition = await page.getByRole('link', { name: '01:57 22 jul 2006' });
-      firstEdition.focus();
+      await firstEdition.focus();
       await expect(firstEdition).toBeVisible();
       await page.screenshot({ path: "./captures/" + Date.now() + "screenshot.jpeg" });
     });
